@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<script src="/jquery-3.1.1.slim.min.js"></script>
+<script src="/tether.min.js"></script>
+<script src="/bootstrap.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="css/kuvagalleria.css" th:href="@{css/kuvagalleria.css}" />
+</head>
+<body>
+<div class="container-form">
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/add">
+			<table>
+				<tr>
+					<td>File to upload:</td>
+					<td><input type="file" name="file" /></td>
+				</tr>
+				<tr>
+			
+				<input type="hidden" th:name="${_csrf.parameterName}"
+			th:value="${_csrf.token}" />
+					<td><input type="submit" value="Upload" /></td>
+				</tr>
+				
+				
+				<tr>
+				<select name="picture" class="form-control" th:object="${picture}">
+	<option value=" " selected="selected">Select</option>
+	<option th:value="art" th:text="Art" th:field="${picture.type}">Art</option>
+	<option th:value="model" th:text="Model" th:field="${picture.type}">Art</option>
+	<option th:value="print" th:text="Print" th:field="${picture.type}">Art</option>
+	<option th:value="sketch" th:text="Sketch" th:field="${picture.type}">Art</option>
+</select></tr>
+			</table>
+		</form>
+	</div>
+<div class="napit-rivi">
+			<a href="/index" class="btn btn-success">Frontpage</a>
+			<a href="/users" class="btn btn-success">Users</a>
+			<form th:action="@{/logout}" method="post">
+			<input class="btn btn-success" type="submit" value="Sign Out"/>
+			</form>
+		</div>
+	</div>	
+</body>
+</html>

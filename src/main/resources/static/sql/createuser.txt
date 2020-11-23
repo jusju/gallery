@@ -1,0 +1,10 @@
+CREATE TABLE user(
+id int auto_increment not null,
+username varchar(20) not null,
+password varchar(1040) not null,
+role varchar(40) not null,
+
+PRIMARY KEY (id)
+);
+
+CREATE TABLE user( id int auto_increment not null, name varchar(20) not null, passwordHash varchar(40) not null, role varchar(40) not null,  PRIMARY KEY (id) );

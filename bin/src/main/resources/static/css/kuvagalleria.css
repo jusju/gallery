@@ -1,0 +1,82 @@
+
+.napit-rivi {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	margin: 10px;
+	text-align: center;
+	
+}
+
+.jumbotron {
+	text-align: center;
+	margin-top: 20px;	
+}
+
+.container-image {
+	margin: 20px;
+	grid-gap: 10px;
+	display: grid;
+	grid-template-columns: 100px 1fr;
+}
+
+.container-form {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	grid-column: 1/2;
+}
+
+input, button {
+	grid-column: 2/3;
+}
+
+.gallery {
+	margin: 15px;
+	float: left;
+	width: 250px;
+}
+
+img {
+	width: 100%;
+	height: 25%;
+}
+
+.btn-success {
+  width:160px;
+    height:65px;
+    margin:20px auto;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    box-shadow:0 1px 2px #5e5d5b;
+    margin-right: auto; 
+    line-height: 45px;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  opacity: 0;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+
+

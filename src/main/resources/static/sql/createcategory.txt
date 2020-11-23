@@ -1,0 +1,5 @@
+CREATE TABLE category(
+categoryId int auto_increment not null,
+name varchar(40) not null,
+PRIMARY KEY (categoryId)
+)ENGINE=InnoDB;

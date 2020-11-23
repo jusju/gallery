@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Kuvagalleria</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="css/kuvagalleria.css" th:href="@{css/kuvagalleria.css}" />
+<meta charset="utf-8"/>
+</head>
+<body>
+<div class="container-fluid">
+<div class="jumbotron">
+<h2>Hi</h2>
+<p>Click on user to show pictures!</p>
+</div>
+</div>
+
+<tr th:each="user : ${users}">
+		<h1 align="center">
+			<td><a th:href="@{search?name=__${user.username}__}"
+				th:text="${user.username}">1</a></td>
+		</h1>
+	</tr>
+	
+		<div class="napit-rivi">
+		<a href="/addpic" class="btn btn-success">Add a picture</a>
+		<a href="/images" class="btn btn-success">Pictures</a>
+			<a href="/index" class="btn btn-success">Frontpage</a>
+			<form th:action="@{/logout}" method="post">
+			<input class="btn btn-success" type="submit" value="Sign Out"/>
+			</form>
+		</div>
+	</body>
+</html>

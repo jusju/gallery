@@ -1,0 +1,25 @@
+CREATE TABLE book(
+id int auto_increment not null,
+author varchar(20) not null,
+isbn varchar(40)not null,
+title varchar(40) not null,
+year varchar(40) not null,
+categoryId int not null,
+PRIMARY KEY (id),
+KEY fk_category (categoryId),
+CONSTRAINT fk_category FOREIGN KEY (categoryId) REFERENCES 
+category (categoryId) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB;
+
+
+
+
+ALTER TABLE book
+ADD CONSTRAINT FOREIGN KEY(category) REFERENCES category(categoryId)
+
+
+;
+
+
+
+CREATE TABLE book( id int auto_increment not null, author varchar(20) not null, isbn varchar(40)not null, title varchar(40) not null, year varchar(40) not null, category int DEFAULT unll, PRIMARY KEY (id), KEY fk_category (category), CONSTRAINT fk_category FOREIGN KEY (category) REFERENCES  category (categoryId) ON DELETE CASCADE ON UPDATE CASCADE ) ENGINE=InnoDB;
